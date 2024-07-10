@@ -77,7 +77,5 @@ test('filters by status', async ({ page }) => {
 
   const tableRows = await page.getByRole('cell', { name: 'Pendente' }).all()
 
-  await page.waitForTimeout(1000)
-
   expect(tableRows).toHaveLength(10)
 })
