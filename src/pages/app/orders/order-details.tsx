@@ -38,6 +38,8 @@ export function OrderDetails({ orderId, open }: OrderDetailsProps) {
     return null
   }
 
+  console.log('oxee', order)
+
   return (
     <DialogContent>
       <DialogHeader>
