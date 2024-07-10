@@ -48,6 +48,22 @@ export function RevenueChart() {
     })
   }, [dailyRevenueInPeriod])
 
+  if (process.env.NODE_ENV !== 'production') {
+    // eslint-disable-next-line no-console
+    const originalWarn = console.error
+    // eslint-disable-next-line no-console
+    console.error = (...args) => {
+      if (
+        args[0].includes(
+          'Support for defaultProps will be removed from function components in a future major release.',
+        )
+      ) {
+        return
+      }
+      originalWarn(...args)
+    }
+  }
+
   return (
     <Card className="col-span-6">
       <CardHeader className="flex-row items-center justify-between pb-8">
